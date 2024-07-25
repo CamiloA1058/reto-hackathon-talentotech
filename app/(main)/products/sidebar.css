@@ -1,0 +1,18 @@
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  /* Ancho de la barra de desplazamiento */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Color de la barra de desplazamiento */
+  border-radius: 4px;
+  /* Bordes redondeados */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  /* Fondo de la pista de desplazamiento */
+  margin: 4px;
+  /* Espacio entre la barra de desplazamiento y el contenido */
+}

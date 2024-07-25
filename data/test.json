@@ -1,0 +1,30 @@
+[
+  {
+    "cliente": "1",
+    "productos": [
+      "Auriculares Bluetooth Avanzados",
+      "Smartwatch Fitness Pro",
+      "Cámara DSLR Profesional"
+    ]
+  },
+  {
+    "cliente": "2",
+    "productos": ["Auriculares Bluetooth Avanzados", "Laptop Gamer Ultra"]
+  },
+  {
+    "cliente": "3",
+    "productos": [
+      "Smartwatch Fitness Pro",
+      "Cámara DSLR Profesional",
+      "Robot Aspirador Inteligente"
+    ]
+  },
+  {
+    "cliente": "4",
+    "productos": [
+      "Auriculares Bluetooth Avanzados",
+      "Cámara DSLR Profesional",
+      "Laptop Gamer Ultra"
+    ]
+  }
+]

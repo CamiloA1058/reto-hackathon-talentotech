@@ -10,15 +10,43 @@ const relaciones = {
   "Pack Piña Chips": [
     {
       nombre: "Pan Integral",
-      url: "url",
+      url: "https://www.tiendasjumbo.co/pan-bimbo-artesano-integral-tajado-x500g/p",
     },
     {
-      nombre: "Pan Integral",
-      url: "url",
+      nombre: "Pan Tajado Antano",
+      url: "https://www.tiendasjumbo.co/pan-santa-clara-antano-tajado-x470g/p",
     },
   ],
-  "Pack Remolacha": [{}],
-  "Pack Manzana": [{}],
+  "Pack Remolacha": [{
+    {
+      nombre: "Yogurt Alpina Original",
+      url: "https://www.tiendasjumbo.co/yogurt-x-150-gr-x-5-und-alpina/p",
+    },
+    {
+      nombre: "Yogurt Griego",
+      url: "https://www.tiendasjumbo.co/yogurt-alpina-griego-fresa-mora-x4und-x150-c-u/p",
+    },
+  }],
+  "Pack Manzana": [{
+    {
+      nombre: "Avena Colanta",
+      url: "https://www.tiendasjumbo.co/paquete-avena-natural-250g-x-4und/p",
+    },
+    {
+      nombre: "Pan Tajado Antano",
+      url: "https://www.tiendasjumbo.co/avena-vaso-alpina-finesse-x-6-und-x-250-ml-c-u/p",
+    },
+  }],
+  "Pack Coliflor": [{
+    {
+      nombre: "Yogurt Alpina Original",
+      url: "https://www.tiendasjumbo.co/yogurt-x-150-gr-x-5-und-alpina/p",
+    },
+    {
+      nombre: "Yogurt Griego",
+      url: "https://www.tiendasjumbo.co/yogurt-alpina-griego-fresa-mora-x4und-x150-c-u/p",
+    },
+  }]
 };
 
 const dataPlatformA = {

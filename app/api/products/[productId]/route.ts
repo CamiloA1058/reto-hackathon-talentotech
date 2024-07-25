@@ -1,46 +1,45 @@
-// // pages/api/recommendations/[productId].js
-// import { NextApiRequest, NextApiResponse } from "next";
+import { promises as fs } from "fs";
+import path from "path";
+import { NextResponse } from "next/server";
 
-// import ContentBasedRecommender from "content-based-recommender";
-// import fs from "fs";
-// import path from "path";
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+  available: boolean;
+}
 
-// export default function handler(req: NextApiRequest, res: NextApiResponse) {
-//   const { productId } = req.query;
+type Options = {
+  params: {
+    productId: string;
+  };
+};
 
-//   // Leer los datos de productos desde el archivo JSON
-//   const filePath = path.resolve("./public", "productos.json");
-//   const jsonData = fs.readFileSync(filePath, "utf8");
-//   const productos = JSON.parse(jsonData);
+export async function GET(req: Request, options: Options) {
+  try {
+    const jsonDirectory = path.join(process.cwd(), "data");
+    const filePath = path.join(jsonDirectory, "products.json");
 
-//   // Configurar el recomendador
-//   const recommender = new ContentBasedRecommender({
-//     minScore: 0.1, // Ajusta el umbral mínimo de similitud
-//     maxSimilarDocuments: 5, // Número máximo de documentos similares
-//   });
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const products: Product[] = JSON.parse(fileContents);
 
-//   // Preparar datos para el recomendador
-//   const documents = productos.map((producto) => ({
-//     id: producto.id.toString(),
-//     content: producto.descripcion,
-//   }));
+    const productId = parseInt(options.params.productId, 10);
 
-//   // Entrenar el recomendador
-//   recommender.train(documents);
+    const filteredProduct = products.find(
+      (product) => product.id === productId
+    );
 
-//   // Obtener las recomendaciones
-//   const similarDocuments = recommender.getSimilarDocuments(
-//     productId.toString(),
-//     0,
-//     3
-//   ); // Obtener 3 recomendaciones
+    if (!filteredProduct) {
+      return NextResponse.json({ error: "Product not found" }, { status: 404 });
+    }
 
-//   // Obtener los productos recomendados
-//   const recomendaciones = similarDocuments.map((similarDocument) => {
-//     return productos.find(
-//       (producto) => producto.id.toString() === similarDocument.id
-//     );
-//   });
-
-//   res.status(200).json(recomendaciones);
-// }
+    return NextResponse.json(filteredProduct);
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}

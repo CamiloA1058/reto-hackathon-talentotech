@@ -1,30 +1,82 @@
 [
   {
-    "cliente": "1",
-    "productos": [
-      "Auriculares Bluetooth Avanzados",
-      "Smartwatch Fitness Pro",
-      "Cámara DSLR Profesional"
-    ]
+    "id": 1,
+    "nombre": "Cesta de Frutas Frescas",
+    "descripcion": "Disfruta de una variedad de frutas frescas y jugosas. Incluye manzanas, naranjas, plátanos y uvas, todas seleccionadas para ofrecerte la mejor calidad y sabor.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.sFbP9gtL4GvPne8I-BuROwHaHa&pid=Api&P=0&h=180",
+    "precio": 24.99,
+    "disponible": true
   },
   {
-    "cliente": "2",
-    "productos": ["Auriculares Bluetooth Avanzados", "Laptop Gamer Ultra"]
+    "id": 2,
+    "nombre": "Juego de Sábanas 100% Algodón",
+    "descripcion": "Renueva tu dormitorio con este elegante juego de sábanas de 100% algodón. Incluye una sábana ajustable, una sábana plana y dos fundas de almohada, todo en colores suaves y modernos.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.MvAybHczSG_-PpAEy05-igHaHa&pid=Api&P=0&h=180",
+    "precio": 49.99,
+    "disponible": true
   },
   {
-    "cliente": "3",
-    "productos": [
-      "Smartwatch Fitness Pro",
-      "Cámara DSLR Profesional",
-      "Robot Aspirador Inteligente"
-    ]
+    "id": 3,
+    "nombre": "Set de Utensilios de Cocina",
+    "descripcion": "Este set incluye todos los utensilios esenciales para tu cocina, desde cucharas de madera hasta espátulas y batidores. Fabricado en acero inoxidable para máxima durabilidad.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.3l_K6GqKvhzsbxD5kjmgugHaJ9&pid=Api&P=0&h=180",
+    "precio": 39.99,
+    "disponible": true
   },
   {
-    "cliente": "4",
-    "productos": [
-      "Auriculares Bluetooth Avanzados",
-      "Cámara DSLR Profesional",
-      "Laptop Gamer Ultra"
-    ]
+    "id": 4,
+    "nombre": "Reloj de Pared Vintage",
+    "descripcion": "Añade un toque clásico a tu hogar con este elegante reloj de pared de estilo vintage. Con números grandes y una carcasa de madera, es perfecto para cualquier habitación.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.1WQ4YKnzQdC2_-bb84V7qwHaI4&pid=Api&P=0&h=180",
+    "precio": 69.99,
+    "disponible": true
+  },
+  {
+    "id": 5,
+    "nombre": "Jardín de Hierbas en Macetas",
+    "descripcion": "Cultiva tus propias hierbas frescas en casa con este jardín en macetas. Incluye macetas, tierra, y semillas de albahaca, perejil y cilantro.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.nA6rw8-QCFY-mn5EwIRROwHaHa&pid=Api&P=0&h=180",
+    "precio": 34.99,
+    "disponible": true
+  },
+  {
+    "id": 6,
+    "nombre": "Cojín Decorativo de Lino",
+    "descripcion": "Dale un toque acogedor a tu sala de estar con este cojín decorativo de lino. Su diseño elegante y su relleno suave lo hacen perfecto para cualquier sofá o sillón.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.wzTfBCsW5MG5Xr71WbNciAHaFj&pid=Api&P=0&h=180",
+    "precio": 25.99,
+    "disponible": true
+  },
+  {
+    "id": 7,
+    "nombre": "Almohada Memory Foam",
+    "descripcion": "Disfruta de una noche de sueño reparador con esta almohada de memory foam. Se adapta a la forma de tu cuello y cabeza para proporcionar un soporte óptimo y confort durante toda la noche.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.OUEsRmdTwU1n4Rr6ugzQ2gHaHa&pid=Api&P=0&h=180",
+    "precio": 59.99,
+    "disponible": true
+  },
+  {
+    "id": 8,
+    "nombre": "Tazas de Cerámica Pintadas a Mano",
+    "descripcion": "Juego de 4 tazas de cerámica pintadas a mano. Cada taza tiene un diseño único y colorido, ideal para disfrutar de tus bebidas calientes favoritas.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.DzG2w9bl8LtxN6Lt3jHzgAHaKQ&pid=Api&P=0&h=180",
+    "precio": 29.99,
+    "disponible": true
+  },
+  {
+    "id": 9,
+    "nombre": "Manta de Lana con Diseño",
+    "descripcion": "Mantén el calor durante el invierno con esta manta de lana con diseño. Su textura suave y cálida es perfecta para acurrucarse en el sofá o la cama.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.mn3J-tzGQdIM4aC-TkpFCwHaHa&pid=Api&P=0&h=180",
+    "precio": 79.99,
+    "disponible": true
+  },
+  {
+    "id": 10,
+    "nombre": "Botellas de Vidrio para Agua",
+    "descripcion": "Set de 3 botellas de vidrio para agua, ideales para mantenerte hidratado en casa o en la oficina. Incluyen tapas herméticas para evitar derrames.",
+    "imagen": "https://tse2.mm.bing.net/th?id=OIP.P54kk8nh_IxF91Ts0i3b5gHaJ4&pid=Api&P=0&h=180",
+    "precio": 19.99,
+    "disponible": true
   }
 ]

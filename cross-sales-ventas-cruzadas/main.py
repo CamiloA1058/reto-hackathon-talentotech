@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
 import pandas as pd
 from mlxtend.frequent_patterns import apriori, association_rules
 import json
+
 
 # Datos de compras simulados para dos plataformas
 data_platform_A = {
@@ -69,8 +71,11 @@ recommendations_json = json.dumps(recommendations, indent=4)
 
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "https://cuddly-space-umbrella-wr75557p9w6qh5xvw-5000.app.github.dev"}})
+
 
 # 2. Define una ruta para obtener las recomendaciones
+@cross_origin
 @app.route('/recomendaciones', methods=['GET'])
 def obtener_recomendaciones():
     # Aquí, obtén las recomendaciones generadas por tu sistema

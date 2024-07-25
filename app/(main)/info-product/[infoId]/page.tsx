@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 type Props = {
   params: {
@@ -8,7 +9,7 @@ type Props = {
   };
 };
 
-const ProductPage = ({ params }: Props) => {
+const InfoProductPage = ({ params }: Props) => {
   const [product, setProduct] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,7 +17,6 @@ const ProductPage = ({ params }: Props) => {
     const fetchProduct = async () => {
       try {
         const res = await fetch(
-          // `http://localhost:3000/api/products/${params.infoId}`
           `https://cuddly-space-umbrella-wr75557p9w6qh5xvw-3000.app.github.dev/api/products/${params.infoId}`
         );
         if (!res.ok) {
@@ -25,7 +25,11 @@ const ProductPage = ({ params }: Props) => {
         const productData = await res.json();
         setProduct(productData);
       } catch (err) {
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
       }
     };
 
@@ -47,35 +51,35 @@ const ProductPage = ({ params }: Props) => {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-        <img
-          src={product.imagen}
-          alt={product.nombre}
-          style={{ width: "150px", height: "150px" }}
-        />
-        <div>
+    <div className="max-w-[988px] mx-auto flex-1 w-full flex flex-col items-center p-4 gap-4">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-4 w-full">
+        <div className="relative w-[150px] h-[150px] lg:w-[240px] lg:h-[240px] mb-8 lg:mb-0">
+          <img
+            src={product.imagen}
+            alt={product.nombre}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <div className="flex flex-col items-center lg:items-start gap-y-4 w-full lg:w-auto">
           <p>{params.infoId}</p>
-          <hr />
-          <h1>{product.nombre}</h1>
+          <hr className="w-full" />
+          <h1 className="text-xl lg:text-2xl font-bold">{product.nombre}</h1>
           <p>{product.descripcion}</p>
           <p>{product.precio}</p>
         </div>
       </div>
 
-      <h2>Recommended Products</h2>
-      <div style={{ display: "flex", gap: "10px" }}>
+      <h2 className="text-lg lg:text-xl font-semibold mt-8 lg:mt-12">
+        Recommended Products
+      </h2>
+      <div className="flex flex-col lg:flex-row gap-4 mt-4 w-full">
         {recommendedProducts.map((recProduct) => (
           <div
             key={recProduct.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "10px",
-              borderRadius: "5px",
-            }}
+            className="border p-4 rounded shadow-sm flex-1"
           >
-            <h3>{recProduct.name}</h3>
-            <p>{recProduct.price}</p>
+            <h3 className="text-lg font-semibold">{recProduct.name}</h3>
+            <p className="text-gray-600">{recProduct.price}</p>
           </div>
         ))}
       </div>
@@ -83,86 +87,4 @@ const ProductPage = ({ params }: Props) => {
   );
 };
 
-export default ProductPage;
-// import React from "react";
-// import { GetServerSideProps } from "next";
-
-// type Props = {
-//   params: {
-//     infoId: string;
-//   };
-//   product: {
-//     name: string;
-//     description: string;
-//     price: string;
-//     imageUrl: string;
-//   };
-//   recommendedProducts: {
-//     id: number;
-//     name: string;
-//     price: string;
-//   }[];
-// };
-
-// const ProductPage = ({ params, product, recommendedProducts }: Props) => {
-//   return (
-//     <div style={{ padding: "20px" }}>
-//       <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-//         <img
-//           src={product.imageUrl}
-//           alt={product.name}
-//           style={{ width: "150px", height: "150px" }}
-//         />
-//         <div>
-//           <p>{params.infoId}</p>
-//           <hr />
-//           <h1>{product.name}</h1>
-//           <p>{product.description}</p>
-//           <p>{product.price}</p>
-//         </div>
-//       </div>
-
-//       <h2>Recommended Products</h2>
-//       <div style={{ display: "flex", gap: "10px" }}>
-//         {recommendedProducts.map((recProduct) => (
-//           <div
-//             key={recProduct.id}
-//             style={{
-//               border: "1px solid #ccc",
-//               padding: "10px",
-//               borderRadius: "5px",
-//             }}
-//           >
-//             <h3>{recProduct.name}</h3>
-//             <p>{recProduct.price}</p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//   const { infoId } = context.params as { infoId: string };
-
-//   // Fetch product data from your API
-//   const res = await fetch(`http://localhost:3000/api/products/${infoId}`);
-//   const product = await res.json();
-
-//   // Example recommended products
-//   const recommendedProducts = [
-//     { id: 1, name: "Recommended Product 1", price: "$29.99" },
-//     { id: 2, name: "Recommended Product 2", price: "$39.99" },
-//     { id: 3, name: "Recommended Product 3", price: "$49.99" },
-//   ];
-
-//   return {
-//     props: {
-//       params: { infoId },
-//       product,
-//       recommendedProducts,
-//     },
-//   };
-// };
-
-// export default ProductPage;
+export default InfoProductPage;

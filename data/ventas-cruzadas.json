@@ -1,0 +1,16 @@
+{
+  "computador": [
+    {
+      "portatil": {
+        "puntos": 10,
+        "imagen": "url_de_la_imagen_1.jpg",
+        "precio": 89.99
+      },
+      "celular": {
+        "puntos": 11,
+        "imagen": "url_de_la_imagen_1.jpg",
+        "precio": 89.99
+      }
+    }
+  ]
+}
